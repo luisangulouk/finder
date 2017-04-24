@@ -1,0 +1,82 @@
+.container> button{
+    margin:5px 14px;
+}
+.geolocation-feedback {
+    font-size:10px;
+    font-style: italic;
+    color:#808080;
+}
+.geolocation-feedback:before{
+    content:'Location Service: ';
+}
+.places-box, .location-box{
+    display:block;
+    padding:10px;
+    margin-bottom:10px;
+    border:0px dotted blue;
+}
+.location-box div{
+    margin-top:10px;
+    font-family: 'Cabin', sans-serif;
+}
+.location-box img{
+    border:1px solid #E0E0E0;
+    width:100%;
+    height:300px;
+}
+.location-box h2{
+    font-family: 'Cabin', sans-serif;
+    font-size: 18px;
+}
+.places-box > div {
+    margin:10px;
+}
+
+@media all and (max-width: 700px) {
+    .location-box img{
+        height:250px;
+    }
+}
+@media all and (max-width: 550px) {
+    .location-box img{
+        height:200px;
+    }
+    .place-item{
+        display:block;
+        padding:0px 10px 10px 10px;
+        width:100%;
+        border: 0px solid red;
+        background-color: #DB9900;
+        border-radius: 4px;
+    }
+}
+
+.place-item{
+    display:inline-block;
+    vertical-align:top;
+    padding:0px 10px 10px 10px;
+    width:330px;
+    max-height:500px;
+    overflow-y:scroll;
+    border: 0px solid red;
+    background-color: #DB9900;
+    border-radius: 4px;
+}
+.place-item h3 {
+    font-family: 'Lobster', cursive;
+    color: #0A5984;
+    font-weight: 300;
+    text-align: center;
+}
+.place-item > div {
+    font-family: 'Cabin', sans-serif;
+    border:1px solid #D8D8D8;
+    background-color: #E0E0E0;
+    padding: 2px 5px;
+    margin-bottom:4px;
+    color:#808080;
+    border-radius: 4px;
+}
+.place-item strong{
+    color:#0A5984;
+}
