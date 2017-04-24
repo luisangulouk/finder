@@ -1,5 +1,7 @@
 # Mypersonalfinder
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+in order to run the project from localhost the floder must be initialized 
+Run `ng init`
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
