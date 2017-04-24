@@ -33,7 +33,11 @@ export class AppComponent implements OnInit{
   }
 
   findPlacesNearBy():void{
-    //call to foursquare
+    this.FoursquaresService.getPlacesByLL(this.coords.lng, this.coords.lat).subscribe(
+      res => {
+        this.places=res.response.venues;
+      }
+    );
   }
 
   getMapLocation(coords){
