@@ -1,4 +1,35 @@
 <div class="container">
     <app-googlemaps (coords)="getMapLocation($event)"></app-googlemaps>
     <button type="submit" class="btn btn-primary" (click)="findPlacesNearBy()">Find Places</button>
+  <div class="places-box">
+    <div class="place-item" *ngFor="let item of places">
+      <h3>{{ item.name }}</h3>
+      <div class="place-item-info">
+        <strong>Address: </strong><br />
+        <div *ngFor="let item of item.location.formattedAddress">
+          {{ item }}<br />
+        </div>
+        <p *ngIf="item.contact.formattedPhone"><strong>Contact No: </strong>{{ item.contact.formattedPhone }}</p>
+      </div>
+        <span *ngIf="item.location.lng"><button type="button" class="btn btn-primary" (click)="showChildModal(item.name,item.location.lat,item.location.lng)">Map</button></span>
+        <span *ngIf="item.url"><a [href]="item.url" target="_blank" class="btn btn-primary">Website</a></span>
+        <span *ngIf="item.contact.twitter"><a [href]="twitter_url" class="btn btn-primary" target="_blank" (click)="followOnTwitter(item.contact.twitter)"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></span>
+    </div>
+  </div>
+</div>
+
+<div bsModal #mapContainer="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{ selectedVenue.name }}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+              <div><img [src]="selectedVenue.map"  height="400" width="250"></div>
+      </div>
+    </div>
+  </div>
 </div>
